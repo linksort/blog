@@ -62,6 +62,7 @@ export default function Index() {
           maxWidth="30rem"
           py={4}
         >
+          <input type="hidden" name="form-name" value="waitlist" />
           <Input
             type="email"
             inputMode="email"

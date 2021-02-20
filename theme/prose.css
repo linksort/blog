@@ -1,10 +1,26 @@
 .prose {
-  color: #333333;
+  --color-primary: #00bfa2;
+  --color-accent: #45dfc8;
+  --color-text: #333333;
+  --color-text-accent: #111111;
+  --color-border: #dddddd;
+  --color-code-background: #eeeeee;
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-serif: "Source Serif Pro", Georgia, serif;
+  --font-mono: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+.prose {
+  color: var(--color-text);
   max-width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--font-serif);
 }
 
 .prose [class~="lead"] {
-  color: #333333;
+  color: var(--color-text);
   font-size: 1.25em;
   line-height: 1.6;
   margin-top: 1.2em;
@@ -12,22 +28,23 @@
 }
 
 .prose a {
-  color: #333333;
+  color: var(--color-text);
   text-decoration: underline;
+  transition: 200ms;
   font-weight: 500;
-  -webkit-text-decoration-color: #45dfc8;
-          text-decoration-color: #45dfc8;
+  -webkit-text-decoration-color: var(--color-accent);
+          text-decoration-color: var(--color-accent);
   text-decoration-thickness: 0.18rem;
 }
 
 .prose a:hover {
-  color: #000;
-  -webkit-text-decoration-color: #00bfa2;
-          text-decoration-color: #00bfa2;
+  color: var(--color-text-accent);
+  -webkit-text-decoration-color: var(--color-primary);
+          text-decoration-color: var(--color-primary);
 }
 
 .prose strong {
-  color: #333333;
+  color: var(--color-text);
   font-weight: 700;
 }
 
@@ -82,7 +99,7 @@
   content: counter(list-item, var(--list-counter-style, decimal)) ".";
   position: absolute;
   font-weight: 400;
-  color: #333333;
+  color: var(--color-text);
   left: 0;
 }
 
@@ -94,7 +111,7 @@
 .prose ul > li::before {
   content: "";
   position: absolute;
-  background-color: #333333;
+  background-color: var(--color-text);
   border-radius: 50%;
   width: 0.375em;
   height: 0.375em;
@@ -103,7 +120,7 @@
 }
 
 .prose hr {
-  border-color: #EEEEEE;
+  border-color: var(--color-border);
   border-top-width: 1px;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -112,9 +129,9 @@
 .prose blockquote {
   font-weight: 500;
   font-style: italic;
-  color: #333333;
+  color: var(--color-text);
   border-left-width: 0.5rem;
-  border-left-color: #DDDDDD;
+  border-left-color: var(--color-border);
   quotes: "\201C""\201D""\2018""\2019";
   margin-top: 1.6em;
   margin-bottom: 1.6em;
@@ -130,7 +147,8 @@
 }
 
 .prose h1 {
-  color: #333333;
+  color: var(--color-text);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 2.25em;
   margin-top: 0;
@@ -139,7 +157,8 @@
 }
 
 .prose h2 {
-  color: #333333;
+  color: var(--color-text);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.5em;
   margin-top: 2em;
@@ -148,7 +167,8 @@
 }
 
 .prose h3 {
-  color: #333333;
+  color: var(--color-text);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.25em;
   margin-top: 1.6em;
@@ -157,40 +177,50 @@
 }
 
 .prose h4 {
-  color: #333333;
+  color: var(--color-text);
+  font-family: var(--font-sans);
   font-weight: 700;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   line-height: 1.5;
 }
 
+.prose h5 {
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
 .prose figure figcaption {
-  color: #333333;
+  color: var(--color-text);
   font-size: 0.875em;
   line-height: 1.4285714;
   margin-top: 0.8571429em;
 }
 
 .prose code {
-  color: #333333;
+  color: var(--color-text-accent);
   font-weight: 600;
   font-size: 0.8em;
-  background-color: #EEEEEE;
+  background-color: var(--color-code-background);
   border-radius: 0.25rem;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
   padding-top: 0.25rem;
+  font-family: var(--font-mono);
 }
 
 .prose a code {
-  color: #111111;
+  color: var(--color-text-accent);
+  font-family: var(--font-mono);
 }
 
 .prose pre {
   color: inherit;
-  background-color: #EEEEEE;
+  background-color: var(--color-code-background);
   overflow-x: auto;
   font-size: 0.875em;
+  font-family: var(--font-mono);
   line-height: 1.7142857;
   margin-top: 1.7142857em;
   margin-bottom: 1.7142857em;
@@ -210,7 +240,7 @@
   font-weight: 400;
   color: inherit;
   font-size: inherit;
-  font-family: inherit;
+  font-family: var(--font-mono);
   line-height: inherit;
 }
 
@@ -233,10 +263,10 @@
 }
 
 .prose thead {
-  color: #333333;
+  color: var(--color-text);
   font-weight: 600;
   border-bottom-width: 1px;
-  border-bottom-color: #DDDDDD;
+  border-bottom-color: var(--color-border);
 }
 
 .prose thead th {
@@ -248,7 +278,7 @@
 
 .prose tbody tr {
   border-bottom-width: 1px;
-  border-bottom-color: #EEEEEE;
+  border-bottom-color: var(--color-border);
 }
 
 .prose tbody tr:last-child {
@@ -263,15 +293,9 @@
   padding-left: 0.5714286em;
 }
 
-.prose {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
 .prose p {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
-  font-family: "Source Serif Pro", Georgia, serif;
   font-size: 1.25rem;
 }
 
@@ -306,14 +330,12 @@
 .prose ol {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
-  font-family: "Source Serif Pro", Georgia, serif;
   font-size: 1.25rem;
 }
 
 .prose ul {
   margin-top: 1.25em;
   margin-bottom: 1.25em;
-  font-family: "Source Serif Pro", Georgia, serif;
   font-size: 1.25rem;
 }
 
@@ -388,7 +410,3 @@
   margin-bottom: 0;
 }
 
-.prose h5 {
-  color: #333333;
-  font-weight: 700;
-}

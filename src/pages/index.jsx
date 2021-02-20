@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Box, Text, Heading } from "@chakra-ui/react"
+import { Box, Text, Heading, Stack, Input, Button } from "@chakra-ui/react"
 
 import Layout from "../components/Layout"
 import Metadata from "../components/Metadata"
@@ -19,6 +19,7 @@ function ProminentLink({ to, children }) {
           color: "black",
           textDecorationColor: theme => theme.colors.primary,
         },
+        transition: "200ms",
       }}
     >
       {children}
@@ -30,30 +31,65 @@ export default function Index() {
   return (
     <Layout>
       <Metadata />
-      <Box pt={[0, 24]}>
-        <Heading mb={4}>
+      <Stack spacing={4}>
+        <Heading>
           Hello{" "}
           <span role="img" aria-label="waving hand emoji">
             &#x1F44B;
           </span>
         </Heading>
-        <Text mb={4} fontSize="xl" lineHeight="tall">
+        <Text fontSize="xl" lineHeight="tall">
           Not much is going on here yet. Some day soon, on this very page, there
           will be an application where you can save, organize, and share{" "}
-          <Text as="span" sx={{ whiteSpace: "nowrap " }}>
+          <Text as="span" whiteSpace="nowrap">
             your links.{" "}
-            <span role="img" aria-label="smiling face">
+            <span role="img" aria-label="smiling face emoji">
               &#x1F642;
             </span>
           </Text>
         </Text>
+        <Text fontSize="xl" lineHeight="tall">
+          Join our waitlist to get an invitation when we're ready to launch.
+        </Text>
+        <Box
+          as="form"
+          name="waitlist"
+          method="POST"
+          data-netlify="true"
+          action="/waitlist"
+          display="flex"
+          flexDirection={["column", "row"]}
+          maxWidth="30rem"
+          py={4}
+        >
+          <Input
+            type="email"
+            inputMode="email"
+            aria-label="Email"
+            name="email"
+            isRequired
+            size="lg"
+            placeholder="Your email address"
+            borderRightRadius={["md", "none"]}
+            mb={[4, 0]}
+          />
+          <Button
+            type="submit"
+            size="lg"
+            colorScheme="brand"
+            borderLeftRadius={["md", "none"]}
+            flexShrink={0}
+          >
+            Join waitlist
+          </Button>
+        </Box>
         <Text fontSize="xl" lineHeight="tall">
           In the meantime, we're keeping a{" "}
           <ProminentLink to="/blog">blog</ProminentLink> where the team{" "}
           <ProminentLink to="/blog">writes about</ProminentLink> the process of
           building this app.
         </Text>
-      </Box>
+      </Stack>
     </Layout>
   )
 }

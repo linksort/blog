@@ -18,14 +18,39 @@ module.exports = {
     mono: mono,
   },
 
+  shadows: {
+    outline: "0 0 0 3px #45dfc8",
+  },
+
+  components: {
+    Input: {
+      defaultProps: {
+        focusBorderColor: "accent",
+      },
+    },
+  },
+
   colors: {
     transparent: "transparent",
     current: "currentColor",
     black: "#000000",
     white: "#FFFFFF",
 
-    primary: "#00bfa2",
-    accent: "#45dfc8",
+    primary: "#00bfa2", // brand.300
+    accent: "#45dfc8", // brand.200
+
+    brand: {
+      50: "#7fffec",
+      100: "#40ffe2",
+      200: "#45dfc8",
+      300: "#00bfa2",
+      400: "#009982",
+      500: "#007361",
+      600: "#005649",
+      700: "#003a31",
+      800: "#001d18",
+      900: "#000000",
+    },
 
     whiteAlpha: {
       50: "rgba(255, 255, 255, 0.04)",

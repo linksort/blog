@@ -45,6 +45,7 @@ export default function BlogIndex({ data }) {
                     textDecoration: "underline",
                     textDecorationColor: theme => theme.colors.accent,
                     textDecorationThickness: "0.14em",
+                    transition: "200ms",
                     "&:hover": {
                       color: "black",
                       textDecorationColor: theme => theme.colors.primary,

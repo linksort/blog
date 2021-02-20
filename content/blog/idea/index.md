@@ -1,7 +1,7 @@
 ---
 title: Idea
 date: 2021-02-19
-description: Like most people these days, I browse the web constantly and end up with too many tabs. We all know this problem. These tabs are important enough that I don't want to close and forget about them, but they're not important enough that I'm actually going to go to the trouble of creating bookmarks for them in my browser. What’s more, these tabs slow down my computer and, after I finally close them, I often want to find them again when I remember, weeks later, that I need some important information from one of those long abandoned tabs. The point of Linksort is to solve these problems and others.
+description: Like most people these days, I browse the web constantly and end up with too many tabs. We all know this problem. These tabs are important enough that I don't want to close and forget about them, but they're not important enough that I'm actually going to create bookmarks for them in my browser. These tabs slow down my computer and, what's more, after I finally close them, I often want to find them again when I remember, weeks later, that I need some important information from one of those long abandoned tabs. The point of Linksort is to solve these problems and others.
 ---
 Like most people these days, I browse the web constantly and end up with too many tabs. We all know this problem. These tabs are important enough that I don't want to close and forget about them, but they're not important enough that I'm actually going to create bookmarks for them in my browser. These tabs slow down my computer and, what's more, after I finally close them, I often want to find them again when I remember, weeks later, that I need some important information from one of those long abandoned tabs.
 

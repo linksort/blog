@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { Box, Heading, Text, List, ListItem } from "@chakra-ui/react"
+import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons"
 
 import Layout from "../components/Layout"
 import Metadata from "../components/Metadata"
@@ -63,22 +64,50 @@ export default function BlogPostTemplate({ data }) {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Box>
-      <Box as="nav">
+      <Box as="nav" mt={8}>
         <List>
-          <ListItem>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
+          {previous && (
+            <ListItem>
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
+                <Text
+                  as="span"
+                  fontSize="lg"
+                  display="inline-flex"
+                  alignItems="center"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  <ArrowBackIcon />
+                  <Text as="span" ml={1}>
+                    Previous post:
+                  </Text>
+                  <Text as="span" fontWeight="bold" ml={1}>
+                    {previous.frontmatter.title}
+                  </Text>
+                </Text>
               </Link>
-            )}
-          </ListItem>
-          <ListItem>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
+            </ListItem>
+          )}
+          {next && (
+            <ListItem>
+              <Link to={`/blog${next.fields.slug}`} rel="next">
+                <Text
+                  as="span"
+                  fontSize="lg"
+                  display="inline-flex"
+                  alignItems="center"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  <Text as="span" mr={1}>
+                    Next post:
+                  </Text>
+                  <Text as="span" fontWeight="bold" mr={1}>
+                    {next.frontmatter.title}
+                  </Text>
+                  <ArrowForwardIcon />
+                </Text>
               </Link>
-            )}
-          </ListItem>
+            </ListItem>
+          )}
         </List>
       </Box>
     </Layout>

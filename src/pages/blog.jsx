@@ -32,7 +32,7 @@ export default function BlogIndex({ data }) {
   return (
     <Layout>
       <Metadata title="Blog" />
-      <Heading mb={12}>Blog</Heading>
+      <Heading mb={[8, 12]}>Blog</Heading>
       <List>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug

@@ -19,7 +19,7 @@ The goals that follow do not make up an exhaustive list. There are many standard
 
 ## 1. I would like all of Linksort's properties to share the same styles.
 
-Design inconsistencies are not desirable and it's almost always good, from a developer perspective, to reuse code rather than to reimplement the same or similar things in multiple projects. The reason I bring up this goal here is that it is surprisingly difficult to achieve from a technical perspective. I don't have a plan to achieve this goal yet, but it's something to keep in mind from the start.
+Design inconsistencies are not desirable and it's almost always good, from a developer perspective, to reuse code rather than to reimplement the same or similar things in multiple projects. The reason I bring up this goal here is that it is surprisingly difficult to achieve from a technical perspective. I don't have a plan to achieve this goal yet, but it's something I'm keeping in mind from the start.
 
 Another reason why I think this goal is important is that I think that having some design constraints—like those imposed by a styling system that is reused and adhered to—can result in not just more consistent designs than otherwise, but even better designs. There's something about limiting one's creative space that can actually give rise to more creativity—at least that's how my experience has been.
 

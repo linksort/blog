@@ -32,33 +32,22 @@ export default function BlogIndex({ data }) {
   return (
     <Layout>
       <Metadata title="Blog" />
+      <Heading mb={12}>Blog</Heading>
       <List>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <ListItem key={post.fields.slug} mb={16}>
-              <Stack spacing={4}>
-                <Heading
-                  sx={{
-                    fontSize: "3xl",
-                    textDecoration: "underline",
-                    textDecorationColor: theme => theme.colors.accent,
-                    textDecorationThickness: "0.14em",
-                    transition: "200ms",
-                    "&:hover": {
-                      color: "black",
-                      textDecorationColor: theme => theme.colors.primary,
-                    },
-                  }}
-                >
+            <ListItem key={post.fields.slug} mb={12}>
+              <Stack spacing={3}>
+                <Heading as="h3" fontSize="2xl">
                   <Link to={`/blog${post.fields.slug}`}>{title}</Link>
                 </Heading>
                 <Text as="time" dateTime={post.frontmatter.date}>
                   {post.frontmatter.date}
                 </Text>
                 <Box className="prose">
-                  <p>{post.frontmatter.description || post.excerpt}</p>
+                  <p>{post.excerpt}</p>
                 </Box>
                 <Text>
                   <Text

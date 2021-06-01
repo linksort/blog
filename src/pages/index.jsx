@@ -85,10 +85,9 @@ export default function Index() {
           </Button>
         </Box>
         <Text fontSize="xl" lineHeight="tall">
-          In the meantime, we're keeping a{" "}
-          <ProminentLink to="/blog">blog</ProminentLink> where the team{" "}
-          <ProminentLink to="/blog">writes about</ProminentLink> the process of
-          building this app.
+          In the meantime, you can read more about{" "}
+          <ProminentLink to="/blog/idea">the idea</ProminentLink> on our{" "}
+          <ProminentLink to="/blog">blog</ProminentLink>.
         </Text>
       </Stack>
     </Layout>
